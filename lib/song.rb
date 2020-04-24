@@ -21,9 +21,9 @@ class Song
   end
 
   def self.find_by_name(songname)
-    self.all.detect do |song| 
+    self.all.detect do |song|
       song.name == songname
-    end  
+    end
   end
 
   def self.find_or_create_by_name(songname)
@@ -40,13 +40,13 @@ class Song
       parts = file.split(" - ")
       artist_name = parts[0]
       song_name = parts[1].gsub(".mp3", "")
-  
+
       song = self.new
       song.name = song_name
       song.artist_name = artist_name
       song
   end
-    
+
   def self.create_from_filename(file)
     parts = file.split(" - ")
     artist_name = parts[0]
